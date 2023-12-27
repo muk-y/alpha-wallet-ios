@@ -88,6 +88,16 @@ class TokensCoordinator: Coordinator {
     lazy var rootViewController: TokensViewController = {
         return tokensViewController
     }()
+    
+    private lazy var tokenListViewController: FloatingPanelController = {
+        let panel = FloatingPanelController(isPanEnabled: false)
+        panel.layout = FullScreenScrollableFloatingPanelLayout()
+        panel.shouldDismissOnBackdrop = true
+        panel.surfaceView.grabberHandle.isHidden = true
+        let tokenListViewController = TokenListViewController(screen: TokenListView(), viewModel: TokenListViewModel())
+        panel.set(contentViewController: UINavigationController(rootViewController: tokenListViewController))
+        return panel
+    }()
 
     init(navigationController: UINavigationController = .withOverridenBarAppearence(),
          sessionsProvider: SessionsProvider,
@@ -352,21 +362,23 @@ extension TokensCoordinator: TokensViewControllerDelegate {
     }
 
     private func didPressAddHideTokens() {
-        let coordinator: AddHideTokensCoordinator = .init(
-            tokensFilter: tokensFilter,
-            wallet: wallet,
-            tokenCollection: tokensPipeline,
-            analytics: analytics,
-            domainResolutionService: domainResolutionService,
-            navigationController: navigationController,
-            serversProvider: serversProvider,
-            sessionsProvider: sessionsProvider,
-            tokenImageFetcher: tokenImageFetcher,
-            tokensService: tokensService)
-
-        coordinator.delegate = self
-        addCoordinator(coordinator)
-        coordinator.start()
+        navigationController.present(tokenListViewController, animated: true)
+        
+//        let coordinator: AddHideTokensCoordinator = .init(
+//            tokensFilter: tokensFilter,
+//            wallet: wallet,
+//            tokenCollection: tokensPipeline,
+//            analytics: analytics,
+//            domainResolutionService: domainResolutionService,
+//            navigationController: navigationController,
+//            serversProvider: serversProvider,
+//            sessionsProvider: sessionsProvider,
+//            tokenImageFetcher: tokenImageFetcher,
+//            tokensService: tokensService)
+//
+//        coordinator.delegate = self
+//        addCoordinator(coordinator)
+//        coordinator.start()
     }
 
     func showSingleChainToken(token: Token, in navigationController: UINavigationController) {

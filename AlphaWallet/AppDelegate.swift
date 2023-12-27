@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //Keep this log because it's really useful for debugging things without requiring a new TestFlight/app store submission
         NSLog("--- Application launched with launchOptions: \(String(describing: launchOptions)) with documents directory: \(URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]))")
-
+        setupAppearance()
         self.application = Application.shared
         UNUserNotificationCenter.current().delegate = self
 
@@ -84,6 +84,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return result
     }
+    
+    private func setupAppearance() {
+        if #available(iOS 15.0, *) {
+            UITableView.appearance().sectionHeaderTopPadding = .zero
+        }
+    }
+    
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
