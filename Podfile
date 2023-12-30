@@ -41,7 +41,7 @@ target 'AlphaWallet' do
   pod 'xcbeautify'
   pod 'FloatingPanel'
   pod 'IQKeyboardManager'
-
+  pod 'SVGKit'
   pod 'SwiftLint', '0.50.3', :configuration => 'Debug'
   pod 'SwiftFormat/CLI', '~> 0.49', :configuration => 'Debug'
   pod 'Firebase/Crashlytics'

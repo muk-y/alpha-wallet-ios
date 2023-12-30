@@ -10,6 +10,7 @@ import Foundation
 class EndPoint {
     
     static let baseURL = "https://li.quest/v1"
+    static let baseImageURL = "https://assets.lif3.com/wallet/chains"
     
     var needsAuthorization: Bool = false
     let path: String

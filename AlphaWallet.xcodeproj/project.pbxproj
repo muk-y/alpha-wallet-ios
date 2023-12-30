@@ -884,6 +884,7 @@
 		C3C048FC2B3AA2FE00F9ED51 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C048FB2B3AA2FE00F9ED51 /* BaseViewModel.swift */; };
 		C3C048FF2B3AA3EF00F9ED51 /* AppRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C048FE2B3AA3EF00F9ED51 /* AppRoutable.swift */; };
 		C3D5F62C2B3B282A00B16D27 /* TokenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D5F62B2B3B282A00B16D27 /* TokenTableViewCell.swift */; };
+		C3ED60392B40267A00537DCB /* CustomSVGImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ED60382B40267A00537DCB /* CustomSVGImageView.swift */; };
 		C601B18924407D3B00C763D9 /* SettingViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C601B18624407D3A00C763D9 /* SettingViewHeader.swift */; };
 		C601B18A24407D3B00C763D9 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C601B18724407D3B00C763D9 /* SettingTableViewCell.swift */; };
 		C601B18D24407F4300C763D9 /* SettingTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C601B18C24407F4300C763D9 /* SettingTableViewCellViewModel.swift */; };
@@ -1828,6 +1829,7 @@
 		C3C048FB2B3AA2FE00F9ED51 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		C3C048FE2B3AA3EF00F9ED51 /* AppRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoutable.swift; sourceTree = "<group>"; };
 		C3D5F62B2B3B282A00B16D27 /* TokenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTableViewCell.swift; sourceTree = "<group>"; };
+		C3ED60382B40267A00537DCB /* CustomSVGImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSVGImageView.swift; sourceTree = "<group>"; };
 		C601B18624407D3A00C763D9 /* SettingViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewHeader.swift; sourceTree = "<group>"; };
 		C601B18724407D3B00C763D9 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		C601B18C24407F4300C763D9 /* SettingTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -3125,6 +3127,7 @@
 				878D2559298A6FD200C0CF5E /* AVPlayerView.swift */,
 				87E5457A29B6618700C6CB58 /* ImageView.swift */,
 				C3C048F92B3AA29200F9ED51 /* BaseView.swift */,
+				C3ED60382B40267A00537DCB /* CustomSVGImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -5119,6 +5122,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/StatefulViewController/StatefulViewController.framework",
@@ -5189,6 +5193,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StatefulViewController.framework",
@@ -5786,6 +5791,7 @@
 				5E7C7F67945615E242B61CC3 /* BoxView.swift in Sources */,
 				5E7C72CEFE98436DB8EC0E05 /* BrowserHistoryCell.swift in Sources */,
 				874ED6A227DF53E1001AB374 /* SwapOptionsViewController.swift in Sources */,
+				C3ED60392B40267A00537DCB /* CustomSVGImageView.swift in Sources */,
 				5E7C7EF1F2CDFA52BBF1C620 /* BrowserHistoryCellViewModel.swift in Sources */,
 				5E7C7B4778FF36371701242E /* BrowserHistoryHeaderView.swift in Sources */,
 				5E7C7FE5F70D5777FD7258B2 /* DappsHomeEmptyView.swift in Sources */,

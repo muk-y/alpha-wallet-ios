@@ -13,8 +13,8 @@ class RPCDisplaySelectableTableViewCell: UITableViewCell {
     // MARK: - Properties
 
     // MARK: Private
-    private let chainIconView: ImageView = {
-        let imageView = ImageView()
+    private let chainIconView: SVGImageView = {
+        let imageView = SVGImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
 
@@ -69,6 +69,7 @@ class RPCDisplaySelectableTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         chainIconView.image = nil
+        chainIconView.hideLoadingIndicator()
     }
 
     // MARK: Public
@@ -131,13 +132,14 @@ class RPCDisplaySelectableTableViewCell: UITableViewCell {
         case .auto:
             chainIconView.image = R.image.launch_icon()!
         case .server(let server):
-            chainIconView.set(imageSource: server.walletConnectIconImage)
+            chainIconView.loadSVGImage(url: "\(EndPoint.baseImageURL)/\(server.chainID)-I.svg", fallbackURL: "\(EndPoint.baseImageURL)/\(server.chainID).svg", placeholderImage: server.iconImage ?? UIImage())
         }
     }
 
     private func configureInfoView(viewModel: ServerImageTableViewCellViewModelType) {
         infoView.configure(viewModel: viewModel)
     }
+    
 }
 
 // MARK: - private class
