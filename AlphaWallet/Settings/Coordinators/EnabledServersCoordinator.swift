@@ -11,7 +11,18 @@ protocol EnabledServersCoordinatorDelegate: AnyObject {
 class EnabledServersCoordinator: Coordinator {
     //Cannot be `let` as the chains can change dynamically without the app being restarted (i.e. killed). The UI can be restarted though (when switching changes)
     static var serversOrdered: [RPCServer] {
-        ServersCoordinator.serversOrdered
+        let desiredOrder = [
+            "Fantom Opera",
+            "Binance (BSC)",
+            "Polygon Mainnet"
+        ]
+        let priorityDictionary = Dictionary(uniqueKeysWithValues: desiredOrder.enumerated().map { ($0.element.lowercased(), $0.offset) })
+        let sortedServers = ServersCoordinator.serversOrdered.sorted {
+            let priority1 = priorityDictionary[$0.displayName.lowercased()] ?? Int.max
+            let priority2 = priorityDictionary[$1.displayName.lowercased()] ?? Int.max
+            return priority1 < priority2
+        }
+        return sortedServers
     }
 
     let navigationController: UINavigationController
